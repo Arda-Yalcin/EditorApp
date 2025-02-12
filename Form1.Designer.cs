@@ -32,7 +32,7 @@
             menuStrip1 = new MenuStrip();
             dosyaToolStripMenuItem = new ToolStripMenuItem();
             miYeni = new ToolStripMenuItem();
-            açToolStripMenuItem = new ToolStripMenuItem();
+            miAc = new ToolStripMenuItem();
             miKaydet = new ToolStripMenuItem();
             farklıKaydetToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
@@ -45,7 +45,7 @@
             yardımToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
             tsbYeni = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
+            tsbAc = new ToolStripButton();
             tsbKaydet = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             toolStripButton4 = new ToolStripButton();
@@ -75,7 +75,7 @@
             // 
             // dosyaToolStripMenuItem
             // 
-            dosyaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miYeni, açToolStripMenuItem, miKaydet, farklıKaydetToolStripMenuItem, toolStripMenuItem1, çıkışToolStripMenuItem });
+            dosyaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miYeni, miAc, miKaydet, farklıKaydetToolStripMenuItem, toolStripMenuItem1, çıkışToolStripMenuItem });
             dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
             dosyaToolStripMenuItem.Size = new Size(51, 20);
             dosyaToolStripMenuItem.Text = "Dosya";
@@ -87,11 +87,12 @@
             miYeni.Text = "Yeni";
             miYeni.Click += miYeni_Click;
             // 
-            // açToolStripMenuItem
+            // miAc
             // 
-            açToolStripMenuItem.Name = "açToolStripMenuItem";
-            açToolStripMenuItem.Size = new Size(180, 22);
-            açToolStripMenuItem.Text = "Aç";
+            miAc.Name = "miAc";
+            miAc.Size = new Size(180, 22);
+            miAc.Text = "Aç";
+            miAc.Click += tsbAc_Click;
             // 
             // miKaydet
             // 
@@ -159,7 +160,7 @@
             // 
             toolStrip1.BackColor = Color.Gainsboro;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, toolStripButton2, tsbKaydet, toolStripSeparator1, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
@@ -176,14 +177,15 @@
             tsbYeni.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbYeni.Click += tsbYeni_Click;
             // 
-            // toolStripButton2
+            // tsbAc
             // 
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(36, 51);
-            toolStripButton2.Text = "Aç";
-            toolStripButton2.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbAc.Image = (Image)resources.GetObject("tsbAc.Image");
+            tsbAc.ImageTransparentColor = Color.Magenta;
+            tsbAc.Name = "tsbAc";
+            tsbAc.Size = new Size(36, 51);
+            tsbAc.Text = "Aç";
+            tsbAc.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbAc.Click += tsbAc_Click;
             // 
             // tsbKaydet
             // 
@@ -310,7 +312,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem dosyaToolStripMenuItem;
         private ToolStripMenuItem miYeni;
-        private ToolStripMenuItem açToolStripMenuItem;
+        private ToolStripMenuItem miAc;
         private ToolStripMenuItem miKaydet;
         private ToolStripMenuItem farklıKaydetToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
@@ -323,7 +325,7 @@
         private ToolStripMenuItem açıkTemaToolStripMenuItem;
         private ToolStrip toolStrip1;
         private ToolStripButton tsbYeni;
-        private ToolStripButton toolStripButton2;
+        private ToolStripButton tsbAc;
         private ToolStripButton tsbKaydet;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton toolStripButton4;

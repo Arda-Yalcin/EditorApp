@@ -33,8 +33,8 @@ namespace EditorApp
             saveFileDialog1.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
             saveFileDialog1.DefaultExt = "*.txt";
             DialogResult cevap = saveFileDialog1.ShowDialog();
-            
-            if(cevap == DialogResult.OK)//kullanýcý tamam dediyse
+
+            if (cevap == DialogResult.OK)//kullanýcý tamam dediyse
             {
                 string secilenDosya = saveFileDialog1.FileName;
 
@@ -43,6 +43,25 @@ namespace EditorApp
                 dosyaAdi = secilenDosya;
                 Text = $"[{dosyaAdi}]";
             }
+        }
+
+        private void tsbAc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new ();
+            dialog.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
+            dialog.DefaultExt = "*.txt";
+
+            DialogResult cevap = dialog.ShowDialog();//göster ve bekle
+            if(cevap == DialogResult.OK)//gelen cevap ne?
+            {
+                string secilenDosya = dialog.FileName;
+                string icerik = File.ReadAllText(secilenDosya);
+                txtBelge.Text = icerik;
+                dosyaAdi = secilenDosya;
+                Text = $"[{dosyaAdi}]";
+
+            }
+
         }
     }
 }
