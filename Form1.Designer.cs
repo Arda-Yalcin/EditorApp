@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             dosyaToolStripMenuItem = new ToolStripMenuItem();
-            yeniToolStripMenuItem = new ToolStripMenuItem();
+            miYeni = new ToolStripMenuItem();
             açToolStripMenuItem = new ToolStripMenuItem();
             kaydetToolStripMenuItem = new ToolStripMenuItem();
             farklıKaydetToolStripMenuItem = new ToolStripMenuItem();
@@ -44,7 +44,7 @@
             açıkTemaToolStripMenuItem = new ToolStripMenuItem();
             yardımToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
+            tsbYeni = new ToolStripButton();
             toolStripButton2 = new ToolStripButton();
             toolStripButton3 = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -57,6 +57,7 @@
             toolStripButton8 = new ToolStripButton();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            txtBelge = new TextBox();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -73,44 +74,45 @@
             // 
             // dosyaToolStripMenuItem
             // 
-            dosyaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { yeniToolStripMenuItem, açToolStripMenuItem, kaydetToolStripMenuItem, farklıKaydetToolStripMenuItem, toolStripMenuItem1, çıkışToolStripMenuItem });
+            dosyaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miYeni, açToolStripMenuItem, kaydetToolStripMenuItem, farklıKaydetToolStripMenuItem, toolStripMenuItem1, çıkışToolStripMenuItem });
             dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
             dosyaToolStripMenuItem.Size = new Size(51, 20);
             dosyaToolStripMenuItem.Text = "Dosya";
             // 
-            // yeniToolStripMenuItem
+            // miYeni
             // 
-            yeniToolStripMenuItem.Name = "yeniToolStripMenuItem";
-            yeniToolStripMenuItem.Size = new Size(141, 22);
-            yeniToolStripMenuItem.Text = "Yeni";
+            miYeni.Name = "miYeni";
+            miYeni.Size = new Size(180, 22);
+            miYeni.Text = "Yeni";
+            miYeni.Click += miYeni_Click;
             // 
             // açToolStripMenuItem
             // 
             açToolStripMenuItem.Name = "açToolStripMenuItem";
-            açToolStripMenuItem.Size = new Size(141, 22);
+            açToolStripMenuItem.Size = new Size(180, 22);
             açToolStripMenuItem.Text = "Aç";
             // 
             // kaydetToolStripMenuItem
             // 
             kaydetToolStripMenuItem.Name = "kaydetToolStripMenuItem";
-            kaydetToolStripMenuItem.Size = new Size(141, 22);
+            kaydetToolStripMenuItem.Size = new Size(180, 22);
             kaydetToolStripMenuItem.Text = "Kaydet";
             // 
             // farklıKaydetToolStripMenuItem
             // 
             farklıKaydetToolStripMenuItem.Name = "farklıKaydetToolStripMenuItem";
-            farklıKaydetToolStripMenuItem.Size = new Size(141, 22);
+            farklıKaydetToolStripMenuItem.Size = new Size(180, 22);
             farklıKaydetToolStripMenuItem.Text = "Farklı Kaydet";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(138, 6);
+            toolStripMenuItem1.Size = new Size(177, 6);
             // 
             // çıkışToolStripMenuItem
             // 
             çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            çıkışToolStripMenuItem.Size = new Size(141, 22);
+            çıkışToolStripMenuItem.Size = new Size(180, 22);
             çıkışToolStripMenuItem.Text = "Çıkış";
             // 
             // düzenToolStripMenuItem
@@ -155,21 +157,22 @@
             // 
             toolStrip1.BackColor = Color.Gainsboro;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3, toolStripSeparator1, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, toolStripButton2, toolStripButton3, toolStripSeparator1, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tsbYeni
             // 
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(36, 51);
-            toolStripButton1.Text = "Yeni";
-            toolStripButton1.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbYeni.Image = (Image)resources.GetObject("tsbYeni.Image");
+            tsbYeni.ImageTransparentColor = Color.Magenta;
+            tsbYeni.Name = "tsbYeni";
+            tsbYeni.Size = new Size(36, 51);
+            tsbYeni.Text = "Yeni";
+            tsbYeni.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsbYeni.Click += tsbYeni_Click;
             // 
             // toolStripButton2
             // 
@@ -264,11 +267,21 @@
             toolStripStatusLabel1.Size = new Size(34, 17);
             toolStripStatusLabel1.Text = "Hazır";
             // 
+            // txtBelge
+            // 
+            txtBelge.Dock = DockStyle.Fill;
+            txtBelge.Location = new Point(0, 78);
+            txtBelge.Multiline = true;
+            txtBelge.Name = "txtBelge";
+            txtBelge.Size = new Size(800, 350);
+            txtBelge.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtBelge);
             Controls.Add(statusStrip1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -289,7 +302,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem dosyaToolStripMenuItem;
-        private ToolStripMenuItem yeniToolStripMenuItem;
+        private ToolStripMenuItem miYeni;
         private ToolStripMenuItem açToolStripMenuItem;
         private ToolStripMenuItem kaydetToolStripMenuItem;
         private ToolStripMenuItem farklıKaydetToolStripMenuItem;
@@ -302,7 +315,7 @@
         private ToolStripMenuItem koyuTemaToolStripMenuItem;
         private ToolStripMenuItem açıkTemaToolStripMenuItem;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton tsbYeni;
         private ToolStripButton toolStripButton2;
         private ToolStripButton toolStripButton3;
         private ToolStripSeparator toolStripSeparator1;
@@ -315,5 +328,6 @@
         private ToolStripButton toolStripButton8;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private TextBox txtBelge;
     }
 }
