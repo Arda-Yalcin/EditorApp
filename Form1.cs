@@ -30,6 +30,14 @@ namespace EditorApp
 
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
+            //eðer dosya zaten kayýtlý ise diyalog gösterme
+            //
+            if(!string.IsNullOrEmpty(dosyaAdi))//dosyaAdi!=""
+            {
+                File.WriteAllText(dosyaAdi, txtBelge.Text);
+                return;
+            }
+
             saveFileDialog1.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
             saveFileDialog1.DefaultExt = "*.txt";
             DialogResult cevap = saveFileDialog1.ShowDialog();
