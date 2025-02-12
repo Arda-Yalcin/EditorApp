@@ -83,39 +83,39 @@
             // miYeni
             // 
             miYeni.Name = "miYeni";
-            miYeni.Size = new Size(180, 22);
+            miYeni.Size = new Size(141, 22);
             miYeni.Text = "Yeni";
             miYeni.Click += miYeni_Click;
             // 
             // miAc
             // 
             miAc.Name = "miAc";
-            miAc.Size = new Size(180, 22);
+            miAc.Size = new Size(141, 22);
             miAc.Text = "Aç";
             miAc.Click += tsbAc_Click;
             // 
             // miKaydet
             // 
             miKaydet.Name = "miKaydet";
-            miKaydet.Size = new Size(180, 22);
+            miKaydet.Size = new Size(141, 22);
             miKaydet.Text = "Kaydet";
             miKaydet.Click += tsbKaydet_Click;
             // 
             // farklıKaydetToolStripMenuItem
             // 
             farklıKaydetToolStripMenuItem.Name = "farklıKaydetToolStripMenuItem";
-            farklıKaydetToolStripMenuItem.Size = new Size(180, 22);
+            farklıKaydetToolStripMenuItem.Size = new Size(141, 22);
             farklıKaydetToolStripMenuItem.Text = "Farklı Kaydet";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(177, 6);
+            toolStripMenuItem1.Size = new Size(138, 6);
             // 
             // çıkışToolStripMenuItem
             // 
             çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            çıkışToolStripMenuItem.Size = new Size(180, 22);
+            çıkışToolStripMenuItem.Size = new Size(141, 22);
             çıkışToolStripMenuItem.Text = "Çıkış";
             // 
             // düzenToolStripMenuItem
@@ -297,6 +297,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);

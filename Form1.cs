@@ -17,22 +17,11 @@ namespace EditorApp
             dosyaAdi = "";
             Text = "[Yeni Belge]";
         }
-
-        private void miYeni_Click(object sender, EventArgs e)
-        {
-            YeniBelge();
-        }
-
-        private void tsbYeni_Click(object sender, EventArgs e)
-        {
-            YeniBelge();
-        }
-
-        private void tsbKaydet_Click(object sender, EventArgs e)
+        void Kaydet()
         {
             //eðer dosya zaten kayýtlý ise diyalog gösterme
             //
-            if(!string.IsNullOrEmpty(dosyaAdi))//dosyaAdi!=""
+            if (!string.IsNullOrEmpty(dosyaAdi))//dosyaAdi!=""
             {
                 File.WriteAllText(dosyaAdi, txtBelge.Text);
                 return;
@@ -53,14 +42,29 @@ namespace EditorApp
             }
         }
 
+        private void miYeni_Click(object sender, EventArgs e)
+        {
+            YeniBelge();
+        }
+
+        private void tsbYeni_Click(object sender, EventArgs e)
+        {
+            YeniBelge();
+        }
+
+        private void tsbKaydet_Click(object sender, EventArgs e)
+        {
+            Kaydet();
+        }
+
         private void tsbAc_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new ();
+            OpenFileDialog dialog = new();
             dialog.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
             dialog.DefaultExt = "*.txt";
 
             DialogResult cevap = dialog.ShowDialog();//göster ve bekle
-            if(cevap == DialogResult.OK)//gelen cevap ne?
+            if (cevap == DialogResult.OK)//gelen cevap ne?
             {
                 string secilenDosya = dialog.FileName;
                 string icerik = File.ReadAllText(secilenDosya);
@@ -70,6 +74,27 @@ namespace EditorApp
 
             }
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //MessageBox diayalog penceresi
+            //MessageBox.Show("Form kapanýyor.....");
+            //MessageBox.Show("Form Kapanýyor....", "Dikkat");
+            //MessageBox.Show("Form Kapanýyor....", "Dikkat", MessageBoxButtons.YesNoCancel);
+            //MessageBox.Show("Form Kapanýyor....", "Dikkat", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            var cevap = MessageBox.Show("Kayýt edilmemiþ deðiþiklikleri kayýt etmek ister misiniz?",
+                "Dikkat", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if(cevap == DialogResult.Yes)
+            {
+                Kaydet();
+            }
+            else if(cevap == DialogResult.Cancel)
+            {
+                e.Cancel = true;//kapatma iþlemini iptal et
+            }
+            //Hayýr seçeneðini yazmaya gerek yok!!!!
         }
     }
 }
