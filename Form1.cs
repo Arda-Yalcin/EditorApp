@@ -30,6 +30,8 @@ namespace EditorApp
 
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.Filter = "Metin Dosyalarý|*.txt|Tüm Dosyalar|*.*";
+            saveFileDialog1.DefaultExt = "*.txt";
             DialogResult cevap = saveFileDialog1.ShowDialog();
             
             if(cevap == DialogResult.OK)//kullanýcý tamam dediyse
