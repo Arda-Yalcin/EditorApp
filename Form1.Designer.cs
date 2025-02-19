@@ -57,7 +57,7 @@
             tsbKopyala = new ToolStripButton();
             tsbYapistir = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            toolStripButton7 = new ToolStripButton();
+            tsbBul = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
             toolStripButton8 = new ToolStripButton();
             statusStrip1 = new StatusStrip();
@@ -198,7 +198,7 @@
             // 
             toolStrip1.BackColor = Color.Gainsboro;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, tsbKes, tsbKopyala, tsbYapistir, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, tsbKes, tsbKopyala, tsbYapistir, toolStripSeparator2, tsbBul, toolStripSeparator3, toolStripButton8 });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
@@ -276,14 +276,15 @@
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(6, 54);
             // 
-            // toolStripButton7
+            // tsbBul
             // 
-            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
-            toolStripButton7.ImageTransparentColor = Color.Magenta;
-            toolStripButton7.Name = "toolStripButton7";
-            toolStripButton7.Size = new Size(36, 51);
-            toolStripButton7.Text = "toolStripButton7";
+            tsbBul.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbBul.Image = (Image)resources.GetObject("tsbBul.Image");
+            tsbBul.ImageTransparentColor = Color.Magenta;
+            tsbBul.Name = "tsbBul";
+            tsbBul.Size = new Size(36, 51);
+            tsbBul.Text = "toolStripButton7";
+            tsbBul.Click += tsbBul_Click;
             // 
             // toolStripSeparator3
             // 
@@ -375,7 +376,7 @@
         private ToolStripButton tsbKopyala;
         private ToolStripButton tsbYapistir;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton7;
+        private ToolStripButton tsbBul;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton toolStripButton8;
         private StatusStrip statusStrip1;

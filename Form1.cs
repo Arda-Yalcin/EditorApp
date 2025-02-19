@@ -111,5 +111,11 @@ namespace EditorApp
         {
             txtBelge.Paste();
         }
+
+        private void tsbBul_Click(object sender, EventArgs e)
+        {
+            FrmBul form = new();//Formun nesnesini oluþtur
+            form.Show();//formu göster
+        }
     }
 }
