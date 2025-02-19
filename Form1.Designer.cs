@@ -175,34 +175,34 @@
             // 
             temalarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miKoyuTema, miAcikTema });
             temalarToolStripMenuItem.Name = "temalarToolStripMenuItem";
-            temalarToolStripMenuItem.Size = new Size(127, 22);
+            temalarToolStripMenuItem.Size = new Size(180, 22);
             temalarToolStripMenuItem.Text = "Temalar";
             // 
             // miKoyuTema
             // 
             miKoyuTema.Name = "miKoyuTema";
-            miKoyuTema.Size = new Size(132, 22);
+            miKoyuTema.Size = new Size(180, 22);
             miKoyuTema.Text = "Koyu Tema";
             miKoyuTema.Click += miKoyuTema_Click;
             // 
             // miAcikTema
             // 
             miAcikTema.Name = "miAcikTema";
-            miAcikTema.Size = new Size(132, 22);
+            miAcikTema.Size = new Size(180, 22);
             miAcikTema.Text = "Açık Tema";
             miAcikTema.Click += miAcikTema_Click;
             // 
             // miYaziRengi
             // 
             miYaziRengi.Name = "miYaziRengi";
-            miYaziRengi.Size = new Size(127, 22);
+            miYaziRengi.Size = new Size(180, 22);
             miYaziRengi.Text = "Yazı Rengi";
             miYaziRengi.Click += miYaziRengi_Click;
             // 
             // miYaziTipi
             // 
             miYaziTipi.Name = "miYaziTipi";
-            miYaziTipi.Size = new Size(127, 22);
+            miYaziTipi.Size = new Size(180, 22);
             miYaziTipi.Text = "Yazı Tipi...";
             miYaziTipi.Click += miYaziTipi_Click;
             // 
@@ -260,33 +260,33 @@
             // 
             // tsbKes
             // 
-            tsbKes.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbKes.Image = (Image)resources.GetObject("tsbKes.Image");
             tsbKes.ImageTransparentColor = Color.Magenta;
             tsbKes.Name = "tsbKes";
             tsbKes.Size = new Size(36, 51);
             tsbKes.Text = "Kes";
+            tsbKes.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbKes.ToolTipText = "Kesmek için tıklayın";
             tsbKes.Click += miKes_Click;
             // 
             // tsbKopyala
             // 
-            tsbKopyala.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbKopyala.Image = (Image)resources.GetObject("tsbKopyala.Image");
             tsbKopyala.ImageTransparentColor = Color.Magenta;
             tsbKopyala.Name = "tsbKopyala";
-            tsbKopyala.Size = new Size(36, 51);
+            tsbKopyala.Size = new Size(53, 51);
             tsbKopyala.Text = "Kopyala";
+            tsbKopyala.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbKopyala.Click += miKopyala_Click;
             // 
             // tsbYapistir
             // 
-            tsbYapistir.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbYapistir.Image = (Image)resources.GetObject("tsbYapistir.Image");
             tsbYapistir.ImageTransparentColor = Color.Magenta;
             tsbYapistir.Name = "tsbYapistir";
-            tsbYapistir.Size = new Size(36, 51);
+            tsbYapistir.Size = new Size(49, 51);
             tsbYapistir.Text = "Yapıştır";
+            tsbYapistir.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbYapistir.Click += miYapistir_Click;
             // 
             // toolStripSeparator2
@@ -296,12 +296,12 @@
             // 
             // tsbBul
             // 
-            tsbBul.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbBul.Image = (Image)resources.GetObject("tsbBul.Image");
             tsbBul.ImageTransparentColor = Color.Magenta;
             tsbBul.Name = "tsbBul";
             tsbBul.Size = new Size(36, 51);
-            tsbBul.Text = "toolStripButton7";
+            tsbBul.Text = "Ara";
+            tsbBul.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbBul.Click += tsbBul_Click;
             // 
             // toolStripSeparator3
@@ -311,12 +311,12 @@
             // 
             // tsbHakkinda
             // 
-            tsbHakkinda.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsbHakkinda.Image = (Image)resources.GetObject("tsbHakkinda.Image");
             tsbHakkinda.ImageTransparentColor = Color.Magenta;
             tsbHakkinda.Name = "tsbHakkinda";
-            tsbHakkinda.Size = new Size(36, 51);
-            tsbHakkinda.Text = "toolStripButton8";
+            tsbHakkinda.Size = new Size(61, 51);
+            tsbHakkinda.Text = "Hakkında";
+            tsbHakkinda.TextImageRelation = TextImageRelation.ImageAboveText;
             tsbHakkinda.Click += tsbHakkinda_Click;
             // 
             // statusStrip1
