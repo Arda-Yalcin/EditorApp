@@ -1,14 +1,53 @@
+using System.Text.Json;
+
 namespace EditorApp
 {
     public partial class Form1 : Form
     {
         string dosyaAdi;//editördeki dosyanýn adý
+        Ayarlar ayarlar = new Ayarlar();
 
         public Form1()
         {
             InitializeComponent();
 
+            AyarlariYukle();//kayýtlý ayar var ise yükler
+
             YeniBelge();//uygulama ilkçalýþtýðýnda yeni belge oluþtursun
+        }
+
+        void AyarlariYukle()
+        {
+            if (File.Exists("ayarlar.txt"))
+            {
+                string jsonMetni = File.ReadAllText("ayarlar.txt");
+                //tam tersine serileþtirme yap
+                //metni sýnýfa dönüþtür
+
+                ayarlar = JsonSerializer.Deserialize<Ayarlar>(jsonMetni);
+                Color yaziRengi = Color.FromArgb(ayarlar.YaziRengi);
+                yaziRengi = Color.FromArgb(255, yaziRengi);
+                
+                Color arkaRengi = Color.FromArgb(ayarlar.ArkaplanRengi);
+                arkaRengi = Color.FromArgb(255, arkaRengi);
+
+                txtBelge.ForeColor = yaziRengi;
+                txtBelge.BackColor = arkaRengi;
+                
+                toolStrip1.BackColor = txtBelge.BackColor;
+                toolStrip1.ForeColor = txtBelge.ForeColor;
+                menuStrip1.BackColor = txtBelge.BackColor;
+                menuStrip1.ForeColor = txtBelge.ForeColor;
+            }
+        }
+
+        void AyarlariKaydet()
+        {
+            //Serileþtirme sýnýfýn verisini metne dönüþtürmektir
+            //Json serileþtirmeyi kullan
+            string jsonMetni = JsonSerializer.Serialize(ayarlar);
+
+            File.WriteAllText("ayarlar.txt", jsonMetni);
         }
 
         void YeniBelge()
@@ -136,6 +175,8 @@ namespace EditorApp
             if (cevap == DialogResult.OK)
             {
                 txtBelge.ForeColor = dialog.Color;
+                ayarlar.YaziRengi = txtBelge.ForeColor.ToArgb();
+                AyarlariKaydet();
             }
         }
 
@@ -147,6 +188,9 @@ namespace EditorApp
             toolStrip1.ForeColor = Color.White;
             menuStrip1.BackColor = Color.Gray;
             menuStrip1.ForeColor = Color.White;
+            ayarlar.ArkaplanRengi = Color.Black.ToArgb();
+            ayarlar.YaziRengi = Color.Orange.ToArgb();
+            AyarlariKaydet();
         }
 
         private void miAcikTema_Click(object sender, EventArgs e)
@@ -157,6 +201,9 @@ namespace EditorApp
             toolStrip1.ForeColor = Color.Black;
             menuStrip1.BackColor = SystemColors.ButtonFace;
             menuStrip1.ForeColor = Color.Black;
+            ayarlar.ArkaplanRengi = Color.White.ToArgb();
+            ayarlar.YaziRengi = Color.Black.ToArgb();
+            AyarlariKaydet();
         }
     }
 }
