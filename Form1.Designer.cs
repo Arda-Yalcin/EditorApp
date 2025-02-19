@@ -61,7 +61,7 @@
             toolStripSeparator2 = new ToolStripSeparator();
             tsbBul = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
-            toolStripButton8 = new ToolStripButton();
+            tsbHakkinda = new ToolStripButton();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             txtBelge = new TextBox();
@@ -175,34 +175,34 @@
             // 
             temalarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miKoyuTema, miAcikTema });
             temalarToolStripMenuItem.Name = "temalarToolStripMenuItem";
-            temalarToolStripMenuItem.Size = new Size(180, 22);
+            temalarToolStripMenuItem.Size = new Size(127, 22);
             temalarToolStripMenuItem.Text = "Temalar";
             // 
             // miKoyuTema
             // 
             miKoyuTema.Name = "miKoyuTema";
-            miKoyuTema.Size = new Size(180, 22);
+            miKoyuTema.Size = new Size(132, 22);
             miKoyuTema.Text = "Koyu Tema";
             miKoyuTema.Click += miKoyuTema_Click;
             // 
             // miAcikTema
             // 
             miAcikTema.Name = "miAcikTema";
-            miAcikTema.Size = new Size(180, 22);
+            miAcikTema.Size = new Size(132, 22);
             miAcikTema.Text = "Açık Tema";
             miAcikTema.Click += miAcikTema_Click;
             // 
             // miYaziRengi
             // 
             miYaziRengi.Name = "miYaziRengi";
-            miYaziRengi.Size = new Size(180, 22);
+            miYaziRengi.Size = new Size(127, 22);
             miYaziRengi.Text = "Yazı Rengi";
             miYaziRengi.Click += miYaziRengi_Click;
             // 
             // miYaziTipi
             // 
             miYaziTipi.Name = "miYaziTipi";
-            miYaziTipi.Size = new Size(180, 22);
+            miYaziTipi.Size = new Size(127, 22);
             miYaziTipi.Text = "Yazı Tipi...";
             miYaziTipi.Click += miYaziTipi_Click;
             // 
@@ -216,7 +216,7 @@
             // 
             toolStrip1.BackColor = Color.Gainsboro;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, tsbKes, tsbKopyala, tsbYapistir, toolStripSeparator2, tsbBul, toolStripSeparator3, toolStripButton8 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, tsbKes, tsbKopyala, tsbYapistir, toolStripSeparator2, tsbBul, toolStripSeparator3, tsbHakkinda });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
@@ -309,14 +309,15 @@
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 54);
             // 
-            // toolStripButton8
+            // tsbHakkinda
             // 
-            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton8.Image = (Image)resources.GetObject("toolStripButton8.Image");
-            toolStripButton8.ImageTransparentColor = Color.Magenta;
-            toolStripButton8.Name = "toolStripButton8";
-            toolStripButton8.Size = new Size(36, 51);
-            toolStripButton8.Text = "toolStripButton8";
+            tsbHakkinda.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbHakkinda.Image = (Image)resources.GetObject("tsbHakkinda.Image");
+            tsbHakkinda.ImageTransparentColor = Color.Magenta;
+            tsbHakkinda.Name = "tsbHakkinda";
+            tsbHakkinda.Size = new Size(36, 51);
+            tsbHakkinda.Text = "toolStripButton8";
+            tsbHakkinda.Click += tsbHakkinda_Click;
             // 
             // statusStrip1
             // 
@@ -396,7 +397,7 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton tsbBul;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton toolStripButton8;
+        private ToolStripButton tsbHakkinda;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private TextBox txtBelge;

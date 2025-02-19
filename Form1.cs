@@ -28,13 +28,13 @@ namespace EditorApp
                 ayarlar = JsonSerializer.Deserialize<Ayarlar>(jsonMetni);
                 Color yaziRengi = Color.FromArgb(ayarlar.YaziRengi);
                 yaziRengi = Color.FromArgb(255, yaziRengi);
-                
+
                 Color arkaRengi = Color.FromArgb(ayarlar.ArkaplanRengi);
                 arkaRengi = Color.FromArgb(255, arkaRengi);
 
                 txtBelge.ForeColor = yaziRengi;
                 txtBelge.BackColor = arkaRengi;
-                
+
                 toolStrip1.BackColor = txtBelge.BackColor;
                 toolStrip1.ForeColor = txtBelge.ForeColor;
                 menuStrip1.BackColor = txtBelge.BackColor;
@@ -46,7 +46,7 @@ namespace EditorApp
                     ayarlar.YaziTipiBoyut = 12;
 
 
-                txtBelge.Font = new Font(ayarlar.YaziTipiAd,ayarlar.YaziTipiBoyut, (FontStyle)ayarlar.YaziTipiStil);
+                txtBelge.Font = new Font(ayarlar.YaziTipiAd, ayarlar.YaziTipiBoyut, (FontStyle)ayarlar.YaziTipiStil);
 
             }
         }
@@ -218,6 +218,12 @@ namespace EditorApp
             ayarlar.ArkaplanRengi = Color.White.ToArgb();
             ayarlar.YaziRengi = Color.Black.ToArgb();
             AyarlariKaydet();
+        }
+
+        private void tsbHakkinda_Click(object sender, EventArgs e)
+        {
+            FrmHakkinda form = new();
+            form.ShowDialog();
         }
     }
 }
