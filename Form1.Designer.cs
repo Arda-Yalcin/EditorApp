@@ -38,6 +38,11 @@
             toolStripMenuItem1 = new ToolStripSeparator();
             çıkışToolStripMenuItem = new ToolStripMenuItem();
             düzenToolStripMenuItem = new ToolStripMenuItem();
+            miKes = new ToolStripMenuItem();
+            miKopyala = new ToolStripMenuItem();
+            miYapistir = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            bulToolStripMenuItem = new ToolStripMenuItem();
             görünümToolStripMenuItem = new ToolStripMenuItem();
             temalarToolStripMenuItem = new ToolStripMenuItem();
             koyuTemaToolStripMenuItem = new ToolStripMenuItem();
@@ -48,9 +53,9 @@
             tsbAc = new ToolStripButton();
             tsbKaydet = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            toolStripButton4 = new ToolStripButton();
-            toolStripButton5 = new ToolStripButton();
-            toolStripButton6 = new ToolStripButton();
+            tsbKes = new ToolStripButton();
+            tsbKopyala = new ToolStripButton();
+            tsbYapistir = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             toolStripButton7 = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
@@ -120,9 +125,42 @@
             // 
             // düzenToolStripMenuItem
             // 
+            düzenToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miKes, miKopyala, miYapistir, toolStripMenuItem2, bulToolStripMenuItem });
             düzenToolStripMenuItem.Name = "düzenToolStripMenuItem";
             düzenToolStripMenuItem.Size = new Size(52, 20);
             düzenToolStripMenuItem.Text = "Düzen";
+            // 
+            // miKes
+            // 
+            miKes.Name = "miKes";
+            miKes.Size = new Size(116, 22);
+            miKes.Text = "Kes";
+            miKes.Click += miKes_Click;
+            // 
+            // miKopyala
+            // 
+            miKopyala.Name = "miKopyala";
+            miKopyala.Size = new Size(116, 22);
+            miKopyala.Text = "Kopyala";
+            miKopyala.Click += miKopyala_Click;
+            // 
+            // miYapistir
+            // 
+            miYapistir.Name = "miYapistir";
+            miYapistir.Size = new Size(116, 22);
+            miYapistir.Text = "Yapıştır";
+            miYapistir.Click += miYapistir_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(113, 6);
+            // 
+            // bulToolStripMenuItem
+            // 
+            bulToolStripMenuItem.Name = "bulToolStripMenuItem";
+            bulToolStripMenuItem.Size = new Size(116, 22);
+            bulToolStripMenuItem.Text = "Bul...";
             // 
             // görünümToolStripMenuItem
             // 
@@ -160,7 +198,7 @@
             // 
             toolStrip1.BackColor = Color.Gainsboro;
             toolStrip1.ImageScalingSize = new Size(32, 32);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, toolStripButton4, toolStripButton5, toolStripButton6, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { tsbYeni, tsbAc, tsbKaydet, toolStripSeparator1, tsbKes, tsbKopyala, tsbYapistir, toolStripSeparator2, toolStripButton7, toolStripSeparator3, toolStripButton8 });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
@@ -202,32 +240,36 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 54);
             // 
-            // toolStripButton4
+            // tsbKes
             // 
-            toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(36, 51);
-            toolStripButton4.Text = "toolStripButton4";
+            tsbKes.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbKes.Image = (Image)resources.GetObject("tsbKes.Image");
+            tsbKes.ImageTransparentColor = Color.Magenta;
+            tsbKes.Name = "tsbKes";
+            tsbKes.Size = new Size(36, 51);
+            tsbKes.Text = "Kes";
+            tsbKes.ToolTipText = "Kesmek için tıklayın";
+            tsbKes.Click += miKes_Click;
             // 
-            // toolStripButton5
+            // tsbKopyala
             // 
-            toolStripButton5.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageTransparentColor = Color.Magenta;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(36, 51);
-            toolStripButton5.Text = "toolStripButton5";
+            tsbKopyala.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbKopyala.Image = (Image)resources.GetObject("tsbKopyala.Image");
+            tsbKopyala.ImageTransparentColor = Color.Magenta;
+            tsbKopyala.Name = "tsbKopyala";
+            tsbKopyala.Size = new Size(36, 51);
+            tsbKopyala.Text = "Kopyala";
+            tsbKopyala.Click += miKopyala_Click;
             // 
-            // toolStripButton6
+            // tsbYapistir
             // 
-            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
-            toolStripButton6.ImageTransparentColor = Color.Magenta;
-            toolStripButton6.Name = "toolStripButton6";
-            toolStripButton6.Size = new Size(36, 51);
-            toolStripButton6.Text = "toolStripButton6";
+            tsbYapistir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            tsbYapistir.Image = (Image)resources.GetObject("tsbYapistir.Image");
+            tsbYapistir.ImageTransparentColor = Color.Magenta;
+            tsbYapistir.Name = "tsbYapistir";
+            tsbYapistir.Size = new Size(36, 51);
+            tsbYapistir.Text = "Yapıştır";
+            tsbYapistir.Click += miYapistir_Click;
             // 
             // toolStripSeparator2
             // 
@@ -329,9 +371,9 @@
         private ToolStripButton tsbAc;
         private ToolStripButton tsbKaydet;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton toolStripButton4;
-        private ToolStripButton toolStripButton5;
-        private ToolStripButton toolStripButton6;
+        private ToolStripButton tsbKes;
+        private ToolStripButton tsbKopyala;
+        private ToolStripButton tsbYapistir;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton toolStripButton7;
         private ToolStripSeparator toolStripSeparator3;
@@ -340,5 +382,10 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private TextBox txtBelge;
         private SaveFileDialog saveFileDialog1;
+        private ToolStripMenuItem miKes;
+        private ToolStripMenuItem miKopyala;
+        private ToolStripMenuItem miYapistir;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem bulToolStripMenuItem;
     }
 }

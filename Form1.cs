@@ -86,15 +86,30 @@ namespace EditorApp
             var cevap = MessageBox.Show("Kayýt edilmemiþ deðiþiklikleri kayýt etmek ister misiniz?",
                 "Dikkat", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            if(cevap == DialogResult.Yes)
+            if (cevap == DialogResult.Yes)
             {
                 Kaydet();
             }
-            else if(cevap == DialogResult.Cancel)
+            else if (cevap == DialogResult.Cancel)
             {
                 e.Cancel = true;//kapatma iþlemini iptal et
             }
             //Hayýr seçeneðini yazmaya gerek yok!!!!
+        }
+
+        private void miKes_Click(object sender, EventArgs e)
+        {
+            txtBelge.Cut();
+        }
+
+        private void miKopyala_Click(object sender, EventArgs e)
+        {
+            txtBelge.Copy();
+        }
+
+        private void miYapistir_Click(object sender, EventArgs e)
+        {
+            txtBelge.Paste();
         }
     }
 }
