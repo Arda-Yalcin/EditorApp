@@ -1,4 +1,5 @@
 using System.Text.Json;
+using EditorApp;
 
 namespace EditorApp
 {
@@ -38,6 +39,15 @@ namespace EditorApp
                 toolStrip1.ForeColor = txtBelge.ForeColor;
                 menuStrip1.BackColor = txtBelge.BackColor;
                 menuStrip1.ForeColor = txtBelge.ForeColor;
+
+                if (string.IsNullOrEmpty(ayarlar.YaziTipiAd))
+                    ayarlar.YaziTipiAd = "Arial";
+                if (ayarlar.YaziTipiBoyut <= 0)
+                    ayarlar.YaziTipiBoyut = 12;
+
+
+                txtBelge.Font = new Font(ayarlar.YaziTipiAd,ayarlar.YaziTipiBoyut, (FontStyle)ayarlar.YaziTipiStil);
+
             }
         }
 
@@ -165,6 +175,10 @@ namespace EditorApp
             if (cevap == DialogResult.OK)
             {
                 txtBelge.Font = dialog.Font;
+                ayarlar.YaziTipiAd = dialog.Font.Name;
+                ayarlar.YaziTipiBoyut = dialog.Font.Size;
+                ayarlar.YaziTipiStil = (int)dialog.Font.Style;
+                AyarlariKaydet();
             }
         }
 
