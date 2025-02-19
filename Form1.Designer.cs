@@ -45,8 +45,10 @@
             bulToolStripMenuItem = new ToolStripMenuItem();
             görünümToolStripMenuItem = new ToolStripMenuItem();
             temalarToolStripMenuItem = new ToolStripMenuItem();
-            koyuTemaToolStripMenuItem = new ToolStripMenuItem();
-            açıkTemaToolStripMenuItem = new ToolStripMenuItem();
+            miKoyuTema = new ToolStripMenuItem();
+            miAcikTema = new ToolStripMenuItem();
+            miYaziRengi = new ToolStripMenuItem();
+            miYaziTipi = new ToolStripMenuItem();
             yardımToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
             tsbYeni = new ToolStripButton();
@@ -164,29 +166,45 @@
             // 
             // görünümToolStripMenuItem
             // 
-            görünümToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { temalarToolStripMenuItem });
+            görünümToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { temalarToolStripMenuItem, miYaziRengi, miYaziTipi });
             görünümToolStripMenuItem.Name = "görünümToolStripMenuItem";
             görünümToolStripMenuItem.Size = new Size(70, 20);
             görünümToolStripMenuItem.Text = "Görünüm";
             // 
             // temalarToolStripMenuItem
             // 
-            temalarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { koyuTemaToolStripMenuItem, açıkTemaToolStripMenuItem });
+            temalarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { miKoyuTema, miAcikTema });
             temalarToolStripMenuItem.Name = "temalarToolStripMenuItem";
-            temalarToolStripMenuItem.Size = new Size(115, 22);
+            temalarToolStripMenuItem.Size = new Size(180, 22);
             temalarToolStripMenuItem.Text = "Temalar";
             // 
-            // koyuTemaToolStripMenuItem
+            // miKoyuTema
             // 
-            koyuTemaToolStripMenuItem.Name = "koyuTemaToolStripMenuItem";
-            koyuTemaToolStripMenuItem.Size = new Size(132, 22);
-            koyuTemaToolStripMenuItem.Text = "Koyu Tema";
+            miKoyuTema.Name = "miKoyuTema";
+            miKoyuTema.Size = new Size(180, 22);
+            miKoyuTema.Text = "Koyu Tema";
+            miKoyuTema.Click += miKoyuTema_Click;
             // 
-            // açıkTemaToolStripMenuItem
+            // miAcikTema
             // 
-            açıkTemaToolStripMenuItem.Name = "açıkTemaToolStripMenuItem";
-            açıkTemaToolStripMenuItem.Size = new Size(132, 22);
-            açıkTemaToolStripMenuItem.Text = "Açık Tema";
+            miAcikTema.Name = "miAcikTema";
+            miAcikTema.Size = new Size(180, 22);
+            miAcikTema.Text = "Açık Tema";
+            miAcikTema.Click += miAcikTema_Click;
+            // 
+            // miYaziRengi
+            // 
+            miYaziRengi.Name = "miYaziRengi";
+            miYaziRengi.Size = new Size(180, 22);
+            miYaziRengi.Text = "Yazı Rengi";
+            miYaziRengi.Click += miYaziRengi_Click;
+            // 
+            // miYaziTipi
+            // 
+            miYaziTipi.Name = "miYaziTipi";
+            miYaziTipi.Size = new Size(180, 22);
+            miYaziTipi.Text = "Yazı Tipi...";
+            miYaziTipi.Click += miYaziTipi_Click;
             // 
             // yardımToolStripMenuItem
             // 
@@ -365,8 +383,8 @@
         private ToolStripMenuItem görünümToolStripMenuItem;
         private ToolStripMenuItem yardımToolStripMenuItem;
         private ToolStripMenuItem temalarToolStripMenuItem;
-        private ToolStripMenuItem koyuTemaToolStripMenuItem;
-        private ToolStripMenuItem açıkTemaToolStripMenuItem;
+        private ToolStripMenuItem miKoyuTema;
+        private ToolStripMenuItem miAcikTema;
         private ToolStrip toolStrip1;
         private ToolStripButton tsbYeni;
         private ToolStripButton tsbAc;
@@ -388,5 +406,7 @@
         private ToolStripMenuItem miYapistir;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem bulToolStripMenuItem;
+        private ToolStripMenuItem miYaziRengi;
+        private ToolStripMenuItem miYaziTipi;
     }
 }

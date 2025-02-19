@@ -118,5 +118,45 @@ namespace EditorApp
             form.Show();//formu göster
             //form.ShowDialog();//formu diyalog olarak göster
         }
+
+        private void miYaziTipi_Click(object sender, EventArgs e)
+        {
+            FontDialog dialog = new FontDialog();
+            DialogResult cevap = dialog.ShowDialog();
+            if (cevap == DialogResult.OK)
+            {
+                txtBelge.Font = dialog.Font;
+            }
+        }
+
+        private void miYaziRengi_Click(object sender, EventArgs e)
+        {
+            ColorDialog dialog = new ColorDialog();
+            DialogResult cevap = dialog.ShowDialog();
+            if (cevap == DialogResult.OK)
+            {
+                txtBelge.ForeColor = dialog.Color;
+            }
+        }
+
+        private void miKoyuTema_Click(object sender, EventArgs e)
+        {
+            txtBelge.BackColor = Color.Black;
+            txtBelge.ForeColor = Color.Orange;
+            toolStrip1.BackColor = Color.Black;
+            toolStrip1.ForeColor = Color.White;
+            menuStrip1.BackColor = Color.Gray;
+            menuStrip1.ForeColor = Color.White;
+        }
+
+        private void miAcikTema_Click(object sender, EventArgs e)
+        {
+            txtBelge.BackColor = Color.White;
+            txtBelge.ForeColor = Color.Black;
+            toolStrip1.BackColor = SystemColors.ButtonFace;
+            toolStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = SystemColors.ButtonFace;
+            menuStrip1.ForeColor = Color.Black;
+        }
     }
 }
