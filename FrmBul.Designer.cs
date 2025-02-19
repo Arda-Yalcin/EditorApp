@@ -58,6 +58,7 @@
             btnBul.TabIndex = 2;
             btnBul.Text = "Bul";
             btnBul.UseVisualStyleBackColor = true;
+            btnBul.Click += btnBul_Click;
             // 
             // FrmBul
             // 
@@ -67,8 +68,14 @@
             Controls.Add(btnBul);
             Controls.Add(txtAranan);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmBul";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bul...";
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }
